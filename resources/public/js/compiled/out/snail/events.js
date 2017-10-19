@@ -12,5 +12,11 @@ return cljs.core.reverse.call(null,cljs.core.apply.call(null,cljs.core.map,cljs.
 re_frame.core.reg_event_db.call(null,new cljs.core.Keyword(null,"rotate","rotate",152705015),(function (db,_){
 return cljs.core.update.call(null,db,new cljs.core.Keyword(null,"items","items",1031954938),snail.events.rotate);
 }));
+re_frame.core.reg_event_db.call(null,new cljs.core.Keyword(null,"create-matrix","create-matrix",-267625253),(function (db,p__31714){
+var vec__31715 = p__31714;
+var _ = cljs.core.nth.call(null,vec__31715,(0),null);
+var num = cljs.core.nth.call(null,vec__31715,(1),null);
+return cljs.core.assoc.call(null,db,new cljs.core.Keyword(null,"items","items",1031954938),snail.db.create_matrix.call(null,num));
+}));
 
-//# sourceMappingURL=events.js.map?rel=1508448938755
+//# sourceMappingURL=events.js.map?rel=1508454546111

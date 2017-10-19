@@ -1,10 +1,11 @@
 (ns snail.db)
 
-(def matrix [[1 2 3 4 5]
-             [6 7 8 9 10]
-             [11 12 13 14 15]
-             [16 17 18 19 20]
-             [21 22 23 24 25]])
+(def with-prop (comp (map #(hash-map :num % :visited true))))
+
+(defn with-visited [xs]
+  (into [] with-prop xs))
+
+(defn create-matrix [n] (partition n (->> (range 1 (+ 1 (* n n))) with-visited)))
 
 (def default-db
-  {:items matrix})
+  {:items (create-matrix 0)})

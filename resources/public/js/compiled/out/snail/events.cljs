@@ -14,3 +14,14 @@
  :rotate
  (fn  [db _]
    (update db :items rotate)))
+
+(re-frame/reg-event-db
+ :create-matrix
+ (fn [db [_ num]]
+   (assoc db :items (db/create-matrix num))))
+
+
+; (re-frame/reg-event-db
+;  :traverse
+;  (fn  [db _]
+;    (update db :items traversed)))
