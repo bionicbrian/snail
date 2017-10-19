@@ -9,7 +9,7 @@
 (defn main-panel []
   (let [items (re-frame/subscribe [:items])]
     [:div
-      [:h2 "These are the items"]
+      [:h2 "Behold! The rotating matrix!"]
       [:button
          {:on-click #(re-frame/dispatch [:rotate])}
          "Rotate the matrix!"]
