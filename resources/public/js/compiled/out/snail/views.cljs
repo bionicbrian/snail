@@ -3,13 +3,14 @@
 
 (defn number-item [n]
   [:div
-    {:style {:display "inline-block" :border "1px solid white" :width "3rem" :background-color (if (:visited n) "cornflowerblue" "white")}}
-    (str " " (:num n))])
+    {:style {:display "inline-block" :border "1px solid white" :width "3rem" :background-color "cornflowerblue"}}
+    (str " " n)])
 
 (defn main-panel []
-  (let [items (re-frame/subscribe [:items])]
+  (let [items (re-frame/subscribe [:items])
+        unraveled-items (re-frame/subscribe [:unravel])]
     [:div
-      [:h2 "These are the items"]
+      [:h2 "Behold! The rotating matrix!"]
       [:button
          {:on-click #(re-frame/dispatch [:rotate])}
          "Rotate the matrix!"]
@@ -21,6 +22,10 @@
            {:on-click #(re-frame/dispatch
                          [:create-matrix
                           (.parseInt js/window (-> (.querySelector js/document "#row-count") .-value))])} "Create the matrix!"]
+        [:button
+           {:on-click #(re-frame/dispatch [:unravel-matrix])} "Unravel the matrix!"]
+        [:div
+          [:h2 (str "The unraveled items " @unraveled-items)]]
       (for [row @items]
         [:div {:style {:font-family "Courier"}}
           [:h2

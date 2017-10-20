@@ -11,3 +11,8 @@
  :items
  (fn [db]
    (:items db)))
+
+(re-frame/reg-sub
+ :unravel
+ (fn [db]
+   (:unraveled db)))

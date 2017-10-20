@@ -20,8 +20,7 @@
  (fn [db [_ num]]
    (assoc db :items (db/create-matrix num))))
 
-
-; (re-frame/reg-event-db
-;  :traverse
-;  (fn  [db _]
-;    (update db :items traversed)))
+(re-frame/reg-event-db
+ :unravel-matrix
+ (fn [db [_ _]]
+   (db/unravel-matrix db)))
