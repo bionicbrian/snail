@@ -3,4 +3,4 @@ goog.provide('snail.config');
 goog.require('cljs.core');
 snail.config.debug_QMARK_ = goog.DEBUG;
 
-//# sourceMappingURL=config.js.map?rel=1508424075580
+//# sourceMappingURL=config.js.map?rel=1508541439455

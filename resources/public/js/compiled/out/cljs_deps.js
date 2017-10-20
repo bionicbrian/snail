@@ -57,7 +57,7 @@ goog.addDependency("../re_frame/subs.js", ['re_frame.subs'], ['re_frame.interop'
 goog.addDependency("../re_frame/core.js", ['re_frame.core'], ['re_frame.interop', 're_frame.interceptor', 're_frame.events', 're_frame.fx', 're_frame.registrar', 'cljs.core', 're_frame.router', 'clojure.set', 're_frame.std_interceptors', 're_frame.loggers', 're_frame.subs', 're_frame.cofx', 're_frame.db']);
 goog.addDependency("../snail/events.js", ['snail.events'], ['cljs.core', 'snail.db', 're_frame.core']);
 goog.addDependency("../snail/subs.js", ['snail.subs'], ['cljs.core', 're_frame.core']);
-goog.addDependency("../snail/views.js", ['snail.views'], ['cljs.core', 're_frame.core']);
+goog.addDependency("../snail/views.js", ['snail.views'], ['cljs.core', 'cljs.pprint', 're_frame.core']);
 goog.addDependency("../snail/config.js", ['snail.config'], ['cljs.core']);
 goog.addDependency("../snail/core.js", ['snail.core'], ['snail.events', 'reagent.core', 'cljs.core', 'snail.subs', 'snail.views', 'snail.config', 're_frame.core']);
 goog.addDependency("../figwheel/connect/build_dev.js", ['figwheel.connect.build_dev'], ['cljs.core', 'figwheel.client', 'snail.core', 'figwheel.client.utils']);

@@ -16,7 +16,9 @@
 
   :profiles
   {:dev
-   {:dependencies [[binaryage/devtools "0.9.4"]]
+   {:dependencies [[binaryage/devtools "0.9.4"]
+                   [org.clojars.stumitchell/clairvoyant "0.2.1"]
+                   [day8/re-frame-tracer "0.1.1-SNAPSHOT"]]
 
     :plugins      [[lein-figwheel "0.5.13"]]}}
 

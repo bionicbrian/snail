@@ -1,5 +1,8 @@
 (ns snail.db)
 
+(defn rotate [matrix]
+  (reverse (apply map list matrix)))
+
 (def unravel-matrix
    (comp
      #(assoc % :items (rest (:items %)))

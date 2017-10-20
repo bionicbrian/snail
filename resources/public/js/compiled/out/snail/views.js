@@ -2,6 +2,7 @@
 goog.provide('snail.views');
 goog.require('cljs.core');
 goog.require('re_frame.core');
+goog.require('cljs.pprint');
 snail.views.number_item = (function snail$views$number_item(n){
 return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"display","display",242065432),"inline-block",new cljs.core.Keyword(null,"border","border",1444987323),"1px solid white",new cljs.core.Keyword(null,"width","width",-384071477),"3rem",new cljs.core.Keyword(null,"background-color","background-color",570434026),"cornflowerblue"], null)], null),[" ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(n)].join('')], null);
 });
@@ -21,26 +22,26 @@ return (function (){
 return re_frame.core.dispatch.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"unravel-matrix","unravel-matrix",1873541843)], null));
 });})(items,unraveled_items))
 ], null),"Unravel the matrix!"], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"h2","h2",-372662728),["The unraveled items ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,unraveled_items))].join('')], null)], null),(function (){var iter__29094__auto__ = ((function (items,unraveled_items){
-return (function snail$views$main_panel_$_iter__32167(s__32168){
+return (function snail$views$main_panel_$_iter__42001(s__42002){
 return (new cljs.core.LazySeq(null,((function (items,unraveled_items){
 return (function (){
-var s__32168__$1 = s__32168;
+var s__42002__$1 = s__42002;
 while(true){
-var temp__4657__auto__ = cljs.core.seq.call(null,s__32168__$1);
+var temp__4657__auto__ = cljs.core.seq.call(null,s__42002__$1);
 if(temp__4657__auto__){
-var s__32168__$2 = temp__4657__auto__;
-if(cljs.core.chunked_seq_QMARK_.call(null,s__32168__$2)){
-var c__29092__auto__ = cljs.core.chunk_first.call(null,s__32168__$2);
+var s__42002__$2 = temp__4657__auto__;
+if(cljs.core.chunked_seq_QMARK_.call(null,s__42002__$2)){
+var c__29092__auto__ = cljs.core.chunk_first.call(null,s__42002__$2);
 var size__29093__auto__ = cljs.core.count.call(null,c__29092__auto__);
-var b__32170 = cljs.core.chunk_buffer.call(null,size__29093__auto__);
-if((function (){var i__32169 = (0);
+var b__42004 = cljs.core.chunk_buffer.call(null,size__29093__auto__);
+if((function (){var i__42003 = (0);
 while(true){
-if((i__32169 < size__29093__auto__)){
-var row = cljs.core._nth.call(null,c__29092__auto__,i__32169);
-cljs.core.chunk_append.call(null,b__32170,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"font-family","font-family",-667419874),"Courier"], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"h2","h2",-372662728),cljs.core.map.call(null,snail.views.number_item,row)], null)], null));
+if((i__42003 < size__29093__auto__)){
+var row = cljs.core._nth.call(null,c__29092__auto__,i__42003);
+cljs.core.chunk_append.call(null,b__42004,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"font-family","font-family",-667419874),"Courier"], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"h2","h2",-372662728),cljs.core.map.call(null,snail.views.number_item,row)], null)], null));
 
-var G__32171 = (i__32169 + (1));
-i__32169 = G__32171;
+var G__42005 = (i__42003 + (1));
+i__42003 = G__42005;
 continue;
 } else {
 return true;
@@ -48,13 +49,13 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__32170),snail$views$main_panel_$_iter__32167.call(null,cljs.core.chunk_rest.call(null,s__32168__$2)));
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__42004),snail$views$main_panel_$_iter__42001.call(null,cljs.core.chunk_rest.call(null,s__42002__$2)));
 } else {
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__32170),null);
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__42004),null);
 }
 } else {
-var row = cljs.core.first.call(null,s__32168__$2);
-return cljs.core.cons.call(null,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"font-family","font-family",-667419874),"Courier"], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"h2","h2",-372662728),cljs.core.map.call(null,snail.views.number_item,row)], null)], null),snail$views$main_panel_$_iter__32167.call(null,cljs.core.rest.call(null,s__32168__$2)));
+var row = cljs.core.first.call(null,s__42002__$2);
+return cljs.core.cons.call(null,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"font-family","font-family",-667419874),"Courier"], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"h2","h2",-372662728),cljs.core.map.call(null,snail.views.number_item,row)], null)], null),snail$views$main_panel_$_iter__42001.call(null,cljs.core.rest.call(null,s__42002__$2)));
 }
 } else {
 return null;
@@ -69,4 +70,4 @@ return iter__29094__auto__.call(null,cljs.core.deref.call(null,items));
 })()], null);
 });
 
-//# sourceMappingURL=views.js.map?rel=1508514267488
+//# sourceMappingURL=views.js.map?rel=1508542765352

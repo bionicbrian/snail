@@ -1,5 +1,6 @@
 (ns snail.views
-  (:require [re-frame.core :as re-frame]))
+  (:require [re-frame.core :as re-frame]
+            [cljs.pprint :refer [pprint]]))
 
 (defn number-item [n]
   [:div
@@ -10,6 +11,10 @@
   (let [items (re-frame/subscribe [:items])
         unraveled-items (re-frame/subscribe [:unravel])]
     [:div
+      ; Show log of the db at the top of the page:
+      ; [:pre
+      ;   {:style {:background-color "cornsilk" :color "cornflowerblue" :padding "10px"}}
+      ;   (with-out-str (pprint @re-frame.db/app-db))]
       [:h2 "Behold! The rotating matrix!"]
       [:button
          {:on-click #(re-frame/dispatch [:rotate])}
