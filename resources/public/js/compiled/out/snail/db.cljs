@@ -3,10 +3,10 @@
 (defn rotate [matrix]
   (reverse (apply map list matrix)))
 
-(def unravel-matrix
-   (comp
-     #(assoc % :items (rest (:items %)))
-     (fn [db] (update db :unraveled #(apply (partial conj %) (first (:items db)))))))
+(defn unravel-matrix [db]
+  (-> db
+      (update :unraveled #(apply (partial conj %) (first (:items db))))
+      (assoc :items (rest (:items db)))))
 
 (defn create-matrix [n] (partition n (range 1 (+ 1 (* n n)))))
 

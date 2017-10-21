@@ -1,6 +1,9 @@
 (ns snail.events
   (:require [re-frame.core :as re-frame]
-            [snail.db :as db]))
+            [snail.db :as db]
+            [cljs.core.async :refer [chan close!]])
+  (:require-macros
+    [cljs.core.async.macros :as m :refer [go]]))
 
 (def standard-interceptors  [(when ^boolean goog.DEBUG re-frame/debug)])
 
@@ -19,7 +22,9 @@
  :create-matrix
  standard-interceptors
  (fn [db [_ num]]
-   (assoc db :items (db/create-matrix num))))
+   (-> db
+       (assoc :unraveled [])
+       (assoc :items (db/create-matrix num)))))
 
 (re-frame/reg-event-db
  :unravel-matrix
@@ -29,8 +34,21 @@
 
 (re-frame/reg-event-fx
  :tick-unravel
+ standard-interceptors
  (fn [{:keys [db unravel] :as cofx} [_ _]]
    (if ((count (:items db)))
-       (assoc-in cofx [:unravel :step] true)
-       cofx)))
+     (assoc-in cofx [:unravel :step] true)
+     cofx)))
 
+; (defn timeout [ms]
+;   (let [c (chan)]
+;     (js/setTimeout (fn [] (close! c)) ms)
+;     c))
+
+; (go
+;   (<! (timeout 1000))
+;   (.log js/console "Hello")
+;   (<! (timeout 1000))
+;   (.log js/console "async")
+;   (<! (timeout 1000))
+;   (.log js/console "world!"))
