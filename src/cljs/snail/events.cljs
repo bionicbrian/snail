@@ -35,10 +35,19 @@
 (re-frame/reg-event-fx
  :tick-unravel
  standard-interceptors
- (fn [{:keys [db unravel] :as cofx} [_ _]]
-   (if ((count (:items db)))
-     (assoc-in cofx [:unravel :step] true)
-     cofx)))
+ (fn [cofx _]
+   (assoc cofx :unravel-interval [(:items (:db cofx))])))
+
+(re-frame/reg-fx
+  :unravel-interval
+  (fn [[items]]
+    (if (> (count items) 0) ; If we have a row to unravel:
+        (do
+          (.setTimeout js/window #(re-frame/dispatch [:unravel-matrix]) 500)
+          (if (> (count items) 1) ; If there are more rows to unravel:
+            (do
+              (.setTimeout js/window #(re-frame/dispatch [:rotate]) 1000)
+              (.setTimeout js/window #(re-frame/dispatch [:tick-unravel]) 1500)))))))
 
 ; (defn timeout [ms]
 ;   (let [c (chan)]

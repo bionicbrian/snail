@@ -2,14 +2,17 @@
   (:require [re-frame.core :as re-frame]
             [cljs.pprint :refer [pprint]]))
 
-(defn number-item [n]
-  [:div
-    {:style {:display "inline-block" :border "1px solid white" :width "3rem" :background-color "cornflowerblue"}}
+(def number-steez
+    {:display "inline-block" :font-family "Courier New" :border "1px solid white" :width "3rem"})
+
+(defn number-item [color n]
+  [:span
+    {:style (assoc number-steez :background-color color)}
     (str " " n)])
 
 (defn main-panel []
   (let [items (re-frame/subscribe [:items])
-        unraveled-items (re-frame/subscribe [:unravel])]
+        unraveled-items (re-frame/subscribe [:unravel-items])]
     [:div
       ; Show log of the db at the top of the page:
       ; [:pre
@@ -24,16 +27,17 @@
          {:on-click #(re-frame/dispatch
                        [:create-matrix
                         (.parseInt js/window (-> (.querySelector js/document "#row-count") .-value))])} "Create the matrix!"]
-      [:button
-         {:on-click #(re-frame/dispatch [:rotate])}
-         "Rotate the matrix!"]
-      [:button
-         {:on-click #(re-frame/dispatch [:unravel-matrix])} "Unravel the matrix!"]
+      ; [:button
+      ;    {:on-click #(re-frame/dispatch [:rotate])}
+      ;    "Rotate the matrix!"]
+      ; [:button
+      ;    {:on-click #(re-frame/dispatch [:unravel-matrix])} "Unravel the matrix!"]
       [:button
          {:on-click #(re-frame/dispatch [:tick-unravel])} "Start the unraveling!"]
       [:div
-        [:h2 (str "The unraveled items " @unraveled-items)]]
+        [:h2 "The unraveled items"]
+        [:p (map (partial number-item "cornsilk") @unraveled-items)]]
       (for [row @items]
         [:div {:style {:font-family "Courier"}}
           [:h2
-            (map number-item row)]])]))
+            (map (partial number-item "cornflowerblue") row)]])]))
