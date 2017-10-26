@@ -39,12 +39,10 @@
     {:id           "min"
      :source-paths ["src/cljs"]
      :compiler     {:main            snail.core
-                    :output-to       "resources/public/js/compiled/app.js"
+                    :output-to       "js/main.min.js"
                     :optimizations   :advanced
                     :closure-defines {goog.DEBUG false}
                     :pretty-print    false}}
-
-
     ]}
 
   )

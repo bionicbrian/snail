@@ -1,9 +1,6 @@
 (ns snail.events
   (:require [re-frame.core :as re-frame]
-            [snail.db :as db]
-            [cljs.core.async :refer [chan close!]])
-  (:require-macros
-    [cljs.core.async.macros :as m :refer [go]]))
+            [snail.db :as db]))
 
 (def standard-interceptors  [(when ^boolean goog.DEBUG re-frame/debug)])
 
