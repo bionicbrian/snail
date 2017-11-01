@@ -19,26 +19,26 @@ return (function (){
 return re_frame.core.dispatch.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"tick-unravel","tick-unravel",-482315631)], null));
 });})(items,unraveled_items))
 ], null),"Unravel the snail!"], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"p","p",151049309),cljs.core.map.call(null,cljs.core.partial.call(null,snail.views.number_item,"cornsilk"),cljs.core.deref.call(null,unraveled_items))], null)], null),(function (){var iter__29094__auto__ = ((function (items,unraveled_items){
-return (function snail$views$main_panel_$_iter__31776(s__31777){
+return (function snail$views$main_panel_$_iter__37947(s__37948){
 return (new cljs.core.LazySeq(null,((function (items,unraveled_items){
 return (function (){
-var s__31777__$1 = s__31777;
+var s__37948__$1 = s__37948;
 while(true){
-var temp__4657__auto__ = cljs.core.seq.call(null,s__31777__$1);
+var temp__4657__auto__ = cljs.core.seq.call(null,s__37948__$1);
 if(temp__4657__auto__){
-var s__31777__$2 = temp__4657__auto__;
-if(cljs.core.chunked_seq_QMARK_.call(null,s__31777__$2)){
-var c__29092__auto__ = cljs.core.chunk_first.call(null,s__31777__$2);
+var s__37948__$2 = temp__4657__auto__;
+if(cljs.core.chunked_seq_QMARK_.call(null,s__37948__$2)){
+var c__29092__auto__ = cljs.core.chunk_first.call(null,s__37948__$2);
 var size__29093__auto__ = cljs.core.count.call(null,c__29092__auto__);
-var b__31779 = cljs.core.chunk_buffer.call(null,size__29093__auto__);
-if((function (){var i__31778 = (0);
+var b__37950 = cljs.core.chunk_buffer.call(null,size__29093__auto__);
+if((function (){var i__37949 = (0);
 while(true){
-if((i__31778 < size__29093__auto__)){
-var row = cljs.core._nth.call(null,c__29092__auto__,i__31778);
-cljs.core.chunk_append.call(null,b__31779,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"font-family","font-family",-667419874),"Courier"], null)], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"font-size","font-size",-1847940346),"24px",new cljs.core.Keyword(null,"font-weight","font-weight",2085804583),"bold"], null)], null),cljs.core.map.call(null,cljs.core.partial.call(null,snail.views.number_item,"cornflowerblue"),row)], null)], null));
+if((i__37949 < size__29093__auto__)){
+var row = cljs.core._nth.call(null,c__29092__auto__,i__37949);
+cljs.core.chunk_append.call(null,b__37950,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"font-family","font-family",-667419874),"Courier"], null)], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"font-size","font-size",-1847940346),"24px",new cljs.core.Keyword(null,"font-weight","font-weight",2085804583),"bold"], null)], null),cljs.core.map.call(null,cljs.core.partial.call(null,snail.views.number_item,"cornflowerblue"),row)], null)], null));
 
-var G__31780 = (i__31778 + (1));
-i__31778 = G__31780;
+var G__37951 = (i__37949 + (1));
+i__37949 = G__37951;
 continue;
 } else {
 return true;
@@ -46,13 +46,13 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__31779),snail$views$main_panel_$_iter__31776.call(null,cljs.core.chunk_rest.call(null,s__31777__$2)));
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__37950),snail$views$main_panel_$_iter__37947.call(null,cljs.core.chunk_rest.call(null,s__37948__$2)));
 } else {
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__31779),null);
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__37950),null);
 }
 } else {
-var row = cljs.core.first.call(null,s__31777__$2);
-return cljs.core.cons.call(null,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"font-family","font-family",-667419874),"Courier"], null)], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"font-size","font-size",-1847940346),"24px",new cljs.core.Keyword(null,"font-weight","font-weight",2085804583),"bold"], null)], null),cljs.core.map.call(null,cljs.core.partial.call(null,snail.views.number_item,"cornflowerblue"),row)], null)], null),snail$views$main_panel_$_iter__31776.call(null,cljs.core.rest.call(null,s__31777__$2)));
+var row = cljs.core.first.call(null,s__37948__$2);
+return cljs.core.cons.call(null,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"font-family","font-family",-667419874),"Courier"], null)], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"font-size","font-size",-1847940346),"24px",new cljs.core.Keyword(null,"font-weight","font-weight",2085804583),"bold"], null)], null),cljs.core.map.call(null,cljs.core.partial.call(null,snail.views.number_item,"cornflowerblue"),row)], null)], null),snail$views$main_panel_$_iter__37947.call(null,cljs.core.rest.call(null,s__37948__$2)));
 }
 } else {
 return null;
@@ -67,4 +67,4 @@ return iter__29094__auto__.call(null,cljs.core.deref.call(null,items));
 })()], null);
 });
 
-//# sourceMappingURL=views.js.map?rel=1508710473670
+//# sourceMappingURL=views.js.map?rel=1509580231911

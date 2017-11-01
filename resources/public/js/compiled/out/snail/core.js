@@ -30,4 +30,4 @@ return snail.core.mount_root.call(null);
 });
 goog.exportSymbol('snail.core.init', snail.core.init);
 
-//# sourceMappingURL=core.js.map?rel=1508709491160
+//# sourceMappingURL=core.js.map?rel=1509580231924

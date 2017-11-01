@@ -55,7 +55,7 @@ goog.addDependency("../clojure/data.js", ['clojure.data'], ['cljs.core', 'clojur
 goog.addDependency("../re_frame/std_interceptors.js", ['re_frame.std_interceptors'], ['re_frame.interceptor', 're_frame.registrar', 'cljs.core', 're_frame.utils', 're_frame.loggers', 're_frame.cofx', 'clojure.data', 're_frame.db']);
 goog.addDependency("../re_frame/subs.js", ['re_frame.subs'], ['re_frame.interop', 're_frame.trace', 're_frame.registrar', 'cljs.core', 're_frame.utils', 're_frame.loggers', 're_frame.db']);
 goog.addDependency("../re_frame/core.js", ['re_frame.core'], ['re_frame.interop', 're_frame.interceptor', 're_frame.events', 're_frame.fx', 're_frame.registrar', 'cljs.core', 're_frame.router', 'clojure.set', 're_frame.std_interceptors', 're_frame.loggers', 're_frame.subs', 're_frame.cofx', 're_frame.db']);
-goog.addDependency("../snail/events.js", ['snail.events'], ['cljs.core', 'snail.db', 'cljs.core.async', 're_frame.core']);
+goog.addDependency("../snail/events.js", ['snail.events'], ['cljs.core', 'snail.db', 're_frame.core']);
 goog.addDependency("../snail/subs.js", ['snail.subs'], ['cljs.core', 're_frame.core']);
 goog.addDependency("../snail/views.js", ['snail.views'], ['cljs.core', 'cljs.pprint', 're_frame.core']);
 goog.addDependency("../snail/config.js", ['snail.config'], ['cljs.core']);
@@ -67,6 +67,7 @@ goog.addDependency("../devtools/defaults.js", ['devtools.defaults'], ['cljs.core
 goog.addDependency("../devtools/prefs.js", ['devtools.prefs'], ['cljs.core', 'devtools.defaults']);
 goog.addDependency("../devtools/util.js", ['devtools.util'], ['cljs.core', 'devtools.version', 'goog.userAgent', 'cljs.pprint', 'devtools.context', 'clojure.data', 'devtools.prefs']);
 goog.addDependency("../process/env.js", ['process.env'], ['cljs.core']);
+goog.addDependency("../cljsjs/d3/development/d3.inc.js", ['cljsjs.d3'], []);
 goog.addDependency("../devtools/protocols.js", ['devtools.protocols'], ['cljs.core']);
 goog.addDependency("../devtools/format.js", ['devtools.format'], ['cljs.core', 'devtools.context']);
 goog.addDependency("../devtools/munging.js", ['devtools.munging'], ['cljs.core', 'goog.object', 'goog.string.StringBuffer', 'devtools.context', 'clojure.string']);
@@ -76,6 +77,9 @@ goog.addDependency("../devtools/formatters/templating.js", ['devtools.formatters
 goog.addDependency("../devtools/formatters/printing.js", ['devtools.formatters.printing'], ['devtools.formatters.helpers', 'devtools.formatters.state', 'cljs.core', 'devtools.protocols', 'devtools.format', 'devtools.prefs']);
 goog.addDependency("../devtools/formatters/markup.js", ['devtools.formatters.markup'], ['devtools.formatters.helpers', 'devtools.formatters.printing', 'devtools.formatters.templating', 'devtools.formatters.state', 'cljs.core', 'devtools.munging']);
 goog.addDependency("../cljs/stacktrace.js", ['cljs.stacktrace'], ['goog.string', 'cljs.core', 'clojure.string']);
+goog.addDependency("../day8/re_frame/trace/d3.js", ['day8.re_frame.trace.d3'], ['reagent.core', 'cljs.core']);
+goog.addDependency("../day8/re_frame/trace/graph.js", ['day8.re_frame.trace.graph'], ['cljs.core', 'clojure.set']);
+goog.addDependency("../day8/re_frame/trace/subvis.js", ['day8.re_frame.trace.subvis'], ['re_frame.interop', 'reagent.core', 'day8.re_frame.trace.d3', 'cljs.core', 'goog.object', 'clojure.set', 'day8.re_frame.trace.graph', 're_frame.db', 'cljsjs.d3']);
 goog.addDependency("../devtools/toolbox.js", ['devtools.toolbox'], ['devtools.formatters.markup', 'devtools.formatters.templating', 'cljs.core', 'devtools.protocols']);
 goog.addDependency("../devtools/async.js", ['devtools.async'], ['cljs.core', 'goog.async.nextTick']);
 goog.addDependency("../devtools/reporter.js", ['devtools.reporter'], ['devtools.util', 'cljs.core']);
@@ -84,4 +88,10 @@ goog.addDependency("../devtools/formatters/core.js", ['devtools.formatters.core'
 goog.addDependency("../devtools/formatters.js", ['devtools.formatters'], ['devtools.formatters.core', 'devtools.util', 'cljs.core', 'goog.labs.userAgent.browser', 'devtools.context', 'devtools.prefs']);
 goog.addDependency("../devtools/hints.js", ['devtools.hints'], ['cljs.stacktrace', 'cljs.core', 'devtools.context', 'devtools.prefs']);
 goog.addDependency("../devtools/core.js", ['devtools.core'], ['devtools.toolbox', 'devtools.util', 'cljs.core', 'devtools.async', 'devtools.formatters', 'devtools.hints', 'devtools.defaults', 'devtools.prefs']);
+goog.addDependency("../day8/re_frame/trace/styles.js", ['day8.re_frame.trace.styles'], ['cljs.core']);
+goog.addDependency("../day8/re_frame/trace/components.js", ['day8.re_frame.trace.components'], ['reagent.core', 'cljs.core', 'goog.fx.dom', 'clojure.string']);
+goog.addDependency("../day8/re_frame/trace/localstorage.js", ['day8.re_frame.trace.localstorage'], ['cljs.core', 'goog.storage.Storage', 'goog.storage.mechanism.HTML5LocalStorage', 'cljs.reader']);
+goog.addDependency("../day8/re_frame/trace/app_db.js", ['day8.re_frame.trace.app_db'], ['devtools.formatters.core', 'day8.re_frame.trace.components', 'reagent.core', 'cljs.core', 'day8.re_frame.trace.localstorage', 'clojure.string']);
+goog.addDependency("../day8/re_frame/trace.js", ['day8.re_frame.trace'], ['re_frame.interop', 'devtools.formatters.core', 'reagent.impl.util', 'day8.re_frame.trace.components', 'reagent.interop', 're_frame.trace', 'reagent.ratom', 'reagent.core', 'cljs.core', 'day8.re_frame.trace.localstorage', 'goog.object', 'reagent.impl.batching', 'day8.re_frame.trace.subvis', 'clojure.set', 'reagent.impl.component', 'day8.re_frame.trace.app_db', 'cljs.pprint', 'clojure.string', 'day8.re_frame.trace.styles', 're_frame.db']);
+goog.addDependency("../day8/re_frame/trace/preload.js", ['day8.re_frame.trace.preload'], ['day8.re_frame.trace', 'cljs.core']);
 goog.addDependency("../devtools/preload.js", ['devtools.preload'], ['cljs.core', 'devtools.core', 'devtools.prefs']);
