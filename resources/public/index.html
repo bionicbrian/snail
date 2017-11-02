@@ -2,8 +2,70 @@
 <html lang="en">
   <head>
     <title>Rotate the snail!</title>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    .main {
+        padding: 20px;
+        border-top: 2px solid #00ADEF;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+    .controls {
+        flex: 0 1 auto;
+    }
+    .unraveled-stage {
+        margin-top: 10px;
+        flex: 0 1 auto;
+    }
+    .matrix-stage {
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+    }
+    .matrix {
+        display: inline-block;
+        margin: 50px;
+    }
+    #app span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        line-height: 1;
+        font-size "24px";
+        font-weight: "bold";
+        font-family: "Courier";
+        border: 1px solid white;
+        width: 50px;
+        height: 50px;
+        color: white;
+        background-color: cornflowerblue;
+    }
+    .unraveled-items {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #app .unraveled-items span {
+        color: cornflowerblue;
+        background-color: cornsilk;
+    }
+    .row {
+        display: flex;
+    }
+    .rotating {
+        transform: rotate(-90deg);
+        transition: all 0.6s linear;
+    }
+    .rotating span {
+        transform: rotate(90deg);
+        transition: all 0.6s linear;
+    }
+    </style>
   </head>
   <body style="margin: 0;padding: 0">
     <div id="app"></div>

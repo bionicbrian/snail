@@ -17,6 +17,12 @@
  (fn [db]
    (:unraveled db)))
 
+(re-frame/reg-sub
+ :rotating
+ (fn [db]
+   (:rotating db)))
+
+
 ; (reframe/reg-sub-raw
 ;   :tick-unravel
 ;   (fn on-tick-unravel [app-db event]

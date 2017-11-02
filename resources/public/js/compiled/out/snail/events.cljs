@@ -10,7 +10,10 @@
 (re-frame/reg-event-db
  :rotate
  (fn  [db _]
-   (update db :items db/rotate)))
+   (->
+     db
+     (assoc :rotating false)
+     (update :items db/rotate))))
 
 (re-frame/reg-event-db
  :create-matrix
@@ -22,7 +25,9 @@
 (re-frame/reg-event-db
  :unravel-matrix
  (fn [db [_ _]]
-   (db/unravel-matrix db)))
+   (if (> (count (:items db)) 1)
+           (assoc (db/unravel-matrix db) :rotating true)
+           (db/unravel-matrix db))))
 
 (re-frame/reg-event-db
  :rotating
@@ -34,9 +39,9 @@
  (fn [cofx _]
    (assoc cofx :unravel-interval [(:items (:db cofx))])))
 
-(def unravel-wait 500)
-(def rotate-wait 1000)
-(def tick-wait 1500)
+(def unravel-wait 600)
+(def rotate-wait 1200)
+(def tick-wait 1800)
 
 ;; This is probably not the right way to do this.
 ;; Read the docs again
@@ -45,7 +50,6 @@
   (fn [[items]]
     (if (> (count items) 0) ; If we have a row to unravel:
         (do
-          (re-frame/dispatch [:rotating true])
           (.setTimeout js/window #(re-frame/dispatch [:unravel-matrix]) unravel-wait)
           (if (> (count items) 1) ; If there are more rows to unravel:
             (do

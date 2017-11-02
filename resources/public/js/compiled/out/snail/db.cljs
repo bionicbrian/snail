@@ -5,6 +5,7 @@
 
 (defn unravel-matrix [db]
   (-> db
+      ; (assoc :rotating true)
       (update :unraveled #(apply (partial conj %) (first (:items db))))
       (assoc :items (rest (:items db)))))
 
