@@ -15,4 +15,4 @@ re_frame.core.reg_sub.call(null,new cljs.core.Keyword(null,"rotating","rotating"
 return new cljs.core.Keyword(null,"rotating","rotating",1057948094).cljs$core$IFn$_invoke$arity$1(db);
 }));
 
-//# sourceMappingURL=subs.js.map?rel=1509580541419
+//# sourceMappingURL=subs.js.map?rel=1509590927338

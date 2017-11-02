@@ -25,10 +25,11 @@
 (re-frame/reg-event-db
  :unravel-matrix
  (fn [db [_ _]]
-   (if (> (count (:items db)) 1)
-           (assoc (db/unravel-matrix db) :rotating true)
-           (db/unravel-matrix db))))
+   (if (> (count (:items db)) 1) ; Only visually rotate if more than one item
+          (assoc (db/unravel-matrix db) :rotating true) ; unravel and rotate
+          (db/unravel-matrix db)))) ; unravel only
 
+;; This is currently unused but still nice to have as stand-alone event
 (re-frame/reg-event-db
  :rotating
  (fn [db [_ is-rotating]]
@@ -43,8 +44,8 @@
 (def rotate-wait 1200)
 (def tick-wait 1800)
 
-;; This is probably not the right way to do this.
-;; Read the docs again
+;; For side effects only, no DB effects
+;; Timed dispatch of "unraveling events"
 (re-frame/reg-fx
   :unravel-interval
   (fn [[items]]

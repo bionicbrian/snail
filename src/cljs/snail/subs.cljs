@@ -21,9 +21,3 @@
  :rotating
  (fn [db]
    (:rotating db)))
-
-
-; (reframe/reg-sub-raw
-;   :tick-unravel
-;   (fn on-tick-unravel [app-db event]
-;     (reaction (get-in @app-db [:unravel :step]))))
